@@ -1,17 +1,17 @@
 'use client'
-import { Space, Table, Tag } from 'antd';
+import { useState } from 'react'
+import { Space, Table, Tag, Button } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
+import data from '@/database/database.json'
+
+import { iDebt } from '@/interfaces/debt';
+
+import ModalDebt from '@/components/modal-debt';
 
 export default function MonthByMonth() {
-    interface DataType {
-        id: string;
-        name: string;
-        type: string;
-        value: string;
-        tags: string[];
-    }
-    
-    const columns: ColumnsType<DataType> = [
+
+    const [database, setDatabase] = useState(data.data || []);
+    const columns: ColumnsType<iDebt> = [
         {
             title: 'id',
             dataIndex: 'id',
@@ -32,6 +32,7 @@ export default function MonthByMonth() {
             title: 'value',
             dataIndex: 'value',
             key: 'value',
+            render: (text) => <a>{text}</a>,
         },
         {
             title: 'Tags',
@@ -54,32 +55,14 @@ export default function MonthByMonth() {
             ),
         },
     ];
-    const data: DataType[] = [{
-        id: '1',
-        name: 'Luz',
-        type: 'Saída',
-        value: '139,00',
-        tags: ['nice', 'developer'],
-    },
-    {
-        id: '2',
-        name: 'Aluguel',
-        type: 'Saída',
-        value: '200,00',
-        tags: ['loser'],
-    },
-    {
-        id: '3',
-        name: 'Condomínio',
-        type: 'Saída',
-        value: '50,00',
-        tags: ['cool', 'teacher'],
-    },]
+
+
 
     return (
         <div>
             <h1>Month by Month</h1>
-            <Table columns={columns} dataSource={data} />
+            <Table columns={columns} dataSource={database} />
+            <div><ModalDebt database={database} setDatabase={setDatabase} /></div>
         </div>
 
     )

@@ -1,31 +1,24 @@
 {
     "data": [
         {
-            id: '1',
-            name: 'Luz',
-            type: 'Saída',
-            value: '139,
-            00',
-            tags: ['nice', 'developer'
-            ],
+            "id": "1",
+            "name": "Luz",
+            "type": "out",
+            "value": 139,
+            "tags": [
+                "nice",
+                "developer"
+            ]
         },
         {
-            id: '2',
-            name: 'Aluguel',
-            type: 'Saída',
-            value: '200,
-            00',
-            tags: ['loser'
-            ],
-        },
-        {
-            id: '3',
-            name: 'Condomínio',
-            type: 'Saída',
-            value: '50,
-            00',
-            tags: ['cool', 'teacher'
-            ],
+            "id": "2",
+            "name": "Aluguel",
+            "type": "out",
+            "value": 139,
+            "tags": [
+                "nice",
+                "developer"
+            ]
         }
     ]
 }

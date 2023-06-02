@@ -89,7 +89,7 @@ const columns: ColumnsType<DataType> = [
 
 function TableInfos(data: DataType) {
     return (
-        <Table columns={columns} dataSource={data} />
+        <h1>a</h1>
     )
 }
 
